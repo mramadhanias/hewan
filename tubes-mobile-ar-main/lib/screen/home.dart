@@ -47,6 +47,7 @@ class _HomeState extends State<Home> {
             child: PageView(
               controller: controller,
               onPageChanged: (value) => setState(() {
+                // set selected index
                 _selectedIndex = value;
               }),
               children: [
