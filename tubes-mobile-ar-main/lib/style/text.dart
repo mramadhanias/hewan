@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tubes_market_hewan/style/color.dart';
 
+// style untuk text
 TextStyle text25_7navy = GoogleFonts.roboto(
     textStyle: const TextStyle(
         fontSize: 25, fontWeight: FontWeight.w700, color: navy));
