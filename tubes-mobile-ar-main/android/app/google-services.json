@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554747694865",
+    "project_id": "tubes-market-hewan2",
+    "storage_bucket": "tubes-market-hewan2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554747694865:android:fd00375cbcb3c10fa306b0",
+        "android_client_info": {
+          "package_name": "com.example.tubes_market_hewan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjFn82IgwAzMfgH8opgAd2pPCtuekFXT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
