@@ -15,6 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // selected index untuk halaman
   int _selectedIndex = 0;
   final PageController controller = PageController();
 
