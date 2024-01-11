@@ -34,8 +34,6 @@ class _HomepageState extends State<Homepage> {
     "Ikan",
     "Kodok",
   ];
-  String kucing = '';
-  bool isKucing = true;
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -101,37 +99,25 @@ class _HomepageState extends State<Homepage> {
                           scrollDirection: Axis.horizontal,
                           itemCount: iconData.length,
                           itemBuilder: (context, index) {
-                            return InkWell(
-                              onTap: () {
-                                if (index == 3) {
-                                  setState(() {
-                                    kucing == "kucing"
-                                        ? kucing = ""
-                                        : kucing = "kucing";
-                                    isKucing = !isKucing;
-                                  });
-                                }
-                              },
-                              child: Container(
-                                margin: const EdgeInsets.only(right: 10),
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 20),
-                                child: Center(
-                                    child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    FaIcon(
-                                      iconData[index],
-                                      color: navy,
-                                    ),
-                                    Text(
-                                      titleData[index],
-                                      style: text12_4navy,
-                                    )
-                                  ],
-                                )),
-                              ),
+                            return Container(
+                              margin: const EdgeInsets.only(right: 10),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: Center(
+                                  child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  FaIcon(
+                                    iconData[index],
+                                    color: navy,
+                                  ),
+                                  Text(
+                                    titleData[index],
+                                    style: text12_4navy,
+                                  )
+                                ],
+                              )),
                             );
                           },
                         ),
@@ -153,7 +139,7 @@ class _HomepageState extends State<Homepage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Text(
-                    "",
+                    "Promo sekarang",
                     style: text16_6navy,
                   ),
                 ),
@@ -161,7 +147,11 @@ class _HomepageState extends State<Homepage> {
                   margin: const EdgeInsets.all(20),
                   height: 210,
                   child: StreamBuilder(
-                      stream: db.collection("product").snapshots(),
+                      stream: db
+                          .collection("product")
+                          .limit(3)
+                          .orderBy("name", descending: false)
+                          .snapshots(),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
@@ -186,72 +176,6 @@ class _HomepageState extends State<Homepage> {
                             mainAxisSpacing: 10.0,
                           ),
                           itemBuilder: (context, index) {
-                            // return Text(data[index]['name']);
-                            if (isKucing) {
-                              if (data[index]['name']
-                                  .toString()
-                                  .contains("kucing")) {
-                                print("return");
-                                return InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => ProductDetail(
-                                              data: ProductData(
-                                                  id: data[index].id,
-                                                  image: data[index]['image'],
-                                                  name: data[index]['name'],
-                                                  price: data[index]['price'],
-                                                  desc: data[index]['desc'],
-                                                  stock: data[index]['stock'])),
-                                        ));
-                                  },
-                                  child: Container(
-                                    decoration: cardContainer2,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          height: 150,
-                                          width: mediaQuery.size.width / 2,
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: NetworkImage(
-                                                    data[index]['image']),
-                                                fit: BoxFit.cover),
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                              topLeft: Radius.circular(10),
-                                              topRight: Radius.circular(10),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(10),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                data[index]['name'],
-                                                style: text12_6navy,
-                                              ),
-                                              Text(
-                                                "Rp ${data[index]['price']}",
-                                                style: text14_6navy,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              }
-                              return SizedBox();
-                            }
                             return InkWell(
                               onTap: () {
                                 Navigator.push(

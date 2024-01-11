@@ -143,54 +143,54 @@ class User extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     if (index == 0) {
-                      // logout secara server
-                      auth.signOut();
-                      // logout dari sisi local
-                      Navigator.pushReplacement(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) => Login(),
-                          ));
+                      // // logout secara server
+                      // auth.signOut();
+                      // // logout dari sisi local
+                      // Navigator.pushReplacement(
+                      //     context,
+                      //     CupertinoPageRoute(
+                      //       builder: (context) => Login(),
+                      //     ));
                       // batas
-                      // showDialog<void>(
-                      //     context: context,
-                      //     builder: (BuildContext context) {
-                      //       return AlertDialog(
-                      //         title: const Text('Logout'),
-                      //         content: const Text(
-                      //           'Apakah anda ingin meninggalkan aplikasi?',
-                      //         ),
-                      //         actions: <Widget>[
-                      //           TextButton(
-                      //             style: TextButton.styleFrom(
-                      //               textStyle:
-                      //                   Theme.of(context).textTheme.labelLarge,
-                      //             ),
-                      //             child: const Text('Tidak'),
-                      //             onPressed: () {
-                      //               Navigator.of(context).pop();
-                      //             },
-                      //           ),
-                      //           TextButton(
-                      //             style: TextButton.styleFrom(
-                      //               textStyle:
-                      //                   Theme.of(context).textTheme.labelLarge,
-                      //             ),
-                      //             child: const Text('Ya'),
-                      //             onPressed: () {
-                      //               auth.signOut();
+                      showDialog<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('Logout'),
+                              content: const Text(
+                                'Apakah anda ingin meninggalkan aplikasi?',
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    textStyle:
+                                        Theme.of(context).textTheme.labelLarge,
+                                  ),
+                                  child: const Text('Tidak'),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    textStyle:
+                                        Theme.of(context).textTheme.labelLarge,
+                                  ),
+                                  child: const Text('Ya'),
+                                  onPressed: () {
+                                    auth.signOut();
 
-                      //               // logout dari sisi local
-                      //               Navigator.pushReplacement(
-                      //                   context,
-                      //                   CupertinoPageRoute(
-                      //                     builder: (context) => Login(),
-                      //                   ));
-                      //             },
-                      //           ),
-                      //         ],
-                      //       );
-                      //     });
+                                    // logout dari sisi local
+                                    Navigator.pushReplacement(
+                                        context,
+                                        CupertinoPageRoute(
+                                          builder: (context) => Login(),
+                                        ));
+                                  },
+                                ),
+                              ],
+                            );
+                          });
                       //batas
                     }
                   },

@@ -26,24 +26,24 @@ class Setting {
 }
 
 List<Setting> setting = [
-  // const Setting(
-  //     icon: FontAwesomeIcons.cartShopping,
-  //     title: "Keranjang",
-  //     widget: Center()),
-  // const Setting(
-  //     icon: FontAwesomeIcons.heart, title: "Whitelist", widget: Center()),
-  // const Setting(
-  //     icon: FontAwesomeIcons.faceGrinHearts,
-  //     title: "Followers",
-  //     widget: Center()),
-  // const Setting(
-  //     icon: FontAwesomeIcons.circleInfo,
-  //     title: "Info terkini",
-  //     widget: Center()),
-  // const Setting(
-  //     icon: FontAwesomeIcons.circleQuestion,
-  //     title: "Bantuan cs",
-  //     widget: Center()),
+  const Setting(
+      icon: FontAwesomeIcons.cartShopping,
+      title: "Keranjang",
+      widget: Center()),
+  const Setting(
+      icon: FontAwesomeIcons.heart, title: "Whitelist", widget: Center()),
+  const Setting(
+      icon: FontAwesomeIcons.faceGrinHearts,
+      title: "Followers",
+      widget: Center()),
+  const Setting(
+      icon: FontAwesomeIcons.circleInfo,
+      title: "Info terkini",
+      widget: Center()),
+  const Setting(
+      icon: FontAwesomeIcons.circleQuestion,
+      title: "Bantuan cs",
+      widget: Center()),
   const Setting(
       icon: FontAwesomeIcons.rightFromBracket,
       title: "Logout",
